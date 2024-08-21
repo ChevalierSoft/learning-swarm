@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    environment:
+      - REDIS_URL=redis:6379
+    ports:
+      - 45000:45000
+    restart: unless-stopped
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
